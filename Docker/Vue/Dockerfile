@@ -10,5 +10,5 @@ RUN yarn global add @vue/cli-service-global
 COPY . .
 
 ENV PORT 3000
-# ENTRYPOINT ["tail","-f","/dev/null"]
+
 ENTRYPOINT ["yarn","serve"]
