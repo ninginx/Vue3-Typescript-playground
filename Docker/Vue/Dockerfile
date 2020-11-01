@@ -6,7 +6,7 @@ WORKDIR $APP_HOME
 
 RUN apt-get update && apt-get install -y --no-install-recommends git apt-utils build-essential
 RUN yarn global add @vue/cli
-# RUN npm yarn install
+RUN yarn global add @vue/cli-service-global
 COPY . .
 
 ENV PORT 3000

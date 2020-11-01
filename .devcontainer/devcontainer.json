@@ -1,29 +1,25 @@
 {
-	"name": "vue3-playground",
-	"dockerComposeFile": "../docker-compose.yml",
-	"service": "vue",
-	"workspaceFolder": "/app",
-	"extensions": [
-			"octref.vetur",
-			"dbaeumer.vscode-eslint",
-			"esbenp.prettier-vscode"
-	],
-	"settings": {
-		"editor.tabSize": 2,
-		"editor.formatOnSave": true,
-		"editor.formatOnPaste": false,
-		"editor.formatOnType": false,
-		"eslint.packageManager": "yarn",
-		"editor.codeActionsOnSave": {
-				"source.fixAll.eslint": true
-		},
-		"eslint.validate": [
-				"javascript",
-				"typescript",
-				"vue"
-		],
-		"files.associations": {
-				"*vue": "vue"
-		},
-	}
+  "name": "vue3-playground",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "vue",
+  "workspaceFolder": "/app",
+  "extensions": [
+    "octref.vetur",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "eslint.packageManager": "yarn",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript", "typescript", "vue"],
+    "files.associations": {
+      "*vue": "vue"
+    }
+  }
 }
