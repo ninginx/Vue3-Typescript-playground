@@ -1,3 +1,4 @@
+import firebase from "firebase/app";
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
 
@@ -21,6 +22,21 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+});
+
+router.beforeResolve((to, from, next) => {
+  if (to.path == "/") {
+    next();
+  } else {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        next();
+      } else {
+        //未認証時はこちらにリダイレクトする
+        next({ path: "/" });
+      }
+    });
+  }
 });
 
 export default router;
