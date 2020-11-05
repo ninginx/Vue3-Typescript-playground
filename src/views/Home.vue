@@ -1,16 +1,16 @@
 <template>
   <button @click="googleLogin">Googleでログイン</button>
-  <div>ログインユーザーは: {{ email }}です</div>
+  <div>ログインユーザーは: {{ displayname }}です</div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 
 import firebase from "firebase/app";
-type email = string | null;
+type displayname = string | null;
 export default defineComponent({
   setup() {
-    const email = ref("" as email);
+    const displayname = ref("" as displayname);
 
     function googleLogin() {
       console.log(process.env.APIKEY);
@@ -21,8 +21,8 @@ export default defineComponent({
         .then(function(result) {
           // This gives you a Google Access Token. You can use it to access the Google API.
           if (result.user) {
-            email.value = result.user.displayName;
-            console.log(email);
+            displayname.value = result.user.displayName;
+            console.log(displayname);
           }
 
           // ...
